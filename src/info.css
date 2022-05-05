@@ -6,8 +6,9 @@
 }
 
 :root {
-  --size-font-main: 3vh;
-  --size-font-sub: 1.5vh;
+  --size-font-main: 4vh;
+  --size-font-sub: 3vh;
+  --size-font-small: 2vh;
 }
 
 body {
@@ -37,10 +38,10 @@ p.main {
   color: white;
 }
 
-p.sub {
-  font-size: var(--size-font-sub);
+p.small {
+  font-size: var(--size-font-small);
   font-family: 'NanumSquare';
-  color: #333333;
+  color: #666666;
   position: absolute;
   bottom: 0;
 }
@@ -59,4 +60,10 @@ p.center {
 p.right {
   text-align: right;
   right: 0;
+}
+
+li.main {
+  font-size: var(--size-font-sub);
+  font-family: 'NanumSquare';
+  color: #999999;
 }

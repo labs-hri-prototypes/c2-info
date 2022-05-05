@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="zommeworks">
+    <title>Rookie Cafe Service</title>
+    <link href="src/info.css" rel="stylesheet">
+    <script src="src/process.js"></script>
+  </head>
+
+  <body>
+    <section>
+      <div class="container-page">
+        <div class="wrapper-maintext">
+          <p class="main">베타테스트에 참여해 주셔서 감사합니다!</p>
+          <p class="main">시작하기 전에, 테이블에 놓인 안내판을 확인해 주세요.</p>
+          <ul>
+            <li class="main">무료로 드리는 한 잔을 빼고 주문해 주세요</li>
+            <li class="main">일행 당 한 명만, 한번에 주문해 주세요</li>
+          </ul>
+          <p class="main">예약 시간이 끝나기 10분 전에 다시 알려드릴 테니, <br>티타임을 즐기시면서 시간 내에 설문조사도 꼭 부탁드려요 🙇</p>
+          <br>
+          <p class="main">그럼, 즐거운 티타임 되세요! ☕️</p>
+        </div>
+        <div class="wrapper-footer">
+          <p id="time_started" class="small left">시작 시각</p>
+          <p id="time_current" class="small center">현재 시각</p>
+          <p id="time_remained" class="small right">남은 시간</p>
+        </div>
+        <div class="">
+          <OBJECT ID="raw-timetable" CLASSID="clsid:lxw5wyjv-46wm-6lxr-bl9h-yp9avjwcdizk">
+            <PARAM NAME="DataURL" VALUE="/src/particiapnt_A2.csv">
+          </OBJECT>
+          <pre id="csvdata" src="/src/particiapnt_A2.csv" type="text/csv"></pre>
+        </div>
+      </div>
+    </section>
+  </body>
+
+</html>
