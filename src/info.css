@@ -6,6 +6,7 @@
 }
 
 :root {
+  --size-font-header: 6vh;
   --size-font-main: 4vh;
   --size-font-sub: 3vh;
   --size-font-small: 2vh;
@@ -14,8 +15,29 @@
 body {
   background-color: #000000;
 }
+section {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
 
-.container-page {
+section.default {
+  color: white;
+}
+
+section.alert {
+  background-color: white;
+  color: black;
+}
+
+section.warning {
+  background-color: #036635;
+  color: white;
+}
+
+.container-content {
   position: absolute;
   width: 80%;
   height: 80%;
@@ -28,20 +50,30 @@ body {
 }
 .wrapper-footer {
   position: absolute;
-  bottom: 0;
-  width: 100%;
+  bottom: 10%;
+  width: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+h1 {
+  font-size: var(--size-font-header);
+  font-family: 'NanumSquare';
 }
 
 p.main {
   font-size: var(--size-font-main);
   font-family: 'NanumSquare';
-  color: white;
 }
 
 p.small {
   font-size: var(--size-font-small);
   font-family: 'NanumSquare';
-  color: #666666;
+  color: #999999;
   position: absolute;
   bottom: 0;
 }
