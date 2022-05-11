@@ -51,9 +51,24 @@ function updateTime() {
   let startString;
   let endString;
   let endTime;
+
+  // set default time data
+  if(current.getMinutes() < 30) {
+    startString = `${Math.floor(current.getHours()/10)}${current.getHours()%10}:00`;
+    endString = `${Math.floor(current.getHours()/10)}${current.getHours()%10}:30`;
+    endTime = new Date(`${dateString} ${endString}`);
+  }
+  else {
+    let hour = (current.getHours() + 1) % 24;
+    startString = `${Math.floor(current.getHours()/10)}${current.getHours()%10}:30`;
+    endString = `${Math.floor(hour/10)}${hour%10}:00`;
+    endTime = new Date(`${dateString} ${endString}`);
+  }
+  
   exception.forEach(slot => {
     let slotStart = new Date(`${slot.date} ${slot.start}`);
     let slotEnd = new Date(`${slot.date} ${slot.end}`);
+
     if(
       slot.place = place &&
       current.getTime() >= slotStart.getTime() &&
@@ -63,20 +78,6 @@ function updateTime() {
       startString = slot.start;
       endString = slot.end;
       endTime = new Date(`${dateString} ${slot.end}`);
-    }
-    else {
-      console.log("default time");
-      if(current.getMinutes() < 30) {
-        startString = `${Math.floor(current.getHours()/10)}${current.getHours()%10}:00`;
-        endString = `${Math.floor(current.getHours()/10)}${current.getHours()%10}:30`;
-        endTime = new Date(`${dateString} ${endString}`);
-      }
-      else {
-        let hour = (current.getHours() + 1) % 24;
-        startString = `${Math.floor(current.getHours()/10)}${current.getHours()%10}:30`;
-        endString = `${Math.floor(hour/10)}${hour%10}:00`;
-        endTime = new Date(`${dateString} ${endString}`);
-      }
     }
   });
 
